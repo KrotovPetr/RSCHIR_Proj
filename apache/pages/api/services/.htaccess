@@ -1,0 +1,7 @@
+<Files *>
+    AuthName "Login required"
+    AuthType Basic
+    Require valid-user
+</Files>
+
+

@@ -34,45 +34,74 @@ VALUES
     ('Nicolay', 'Nicolaev', 'Manager');
 
 
-CREATE TABLE IF NOT EXISTS auth (
+CREATE TABLE IF NOT EXISTS users (
     ID INT(11) NOT NULL AUTO_INCREMENT,
     login VARCHAR(20) NOT NULL UNIQUE,
     password VARCHAR(50) NOT NULL,
     PRIMARY KEY(ID)
 );
 
-INSERT INTO auth (login, password)
+INSERT INTO users (login, password)
 VALUES ('admin', '{SHA}0DPiKuNIrrVmD8IUCuw1hQxNqZc=');
 
+CREATE TABLE IF NOT EXISTS catalog (
+                                       ID INT(11) NOT NULL AUTO_INCREMENT,
+                                       product_name TEXT NOT NULL,
+                                       product_desc TEXT NOT NULL,
+                                       product_price INT(11) NOT NULL,
+                                       PRIMARY KEY (ID)
+);
 
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Веник', 'Связка прутьев или веток, используемая для подметания помещений, но иногда и уличных территорий. Прежде употреблялся также для чистки одежды, для опрыскивания водой белья или цветов.', 70) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Веник'
+    ) LIMIT 1;
 
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Корзина', 'Корзина для мусора', 100) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Корзина'
+    ) LIMIT 1;
 
--- INSERT INTO users (name, surname)
--- SELECT * FROM (SELECT 'Alex', 'Rover') AS tmp
--- WHERE NOT EXISTS (
---         SELECT name FROM users WHERE name = 'Alex' AND surname = 'Rover'
---     ) LIMIT 1;
---
--- INSERT INTO users (name, surname)
--- SELECT * FROM (SELECT 'Bob', 'Marley') AS tmp
--- WHERE NOT EXISTS (
---         SELECT name FROM users WHERE name = 'Bob' AND surname = 'Marley'
---     ) LIMIT 1;
---
--- INSERT INTO users (name, surname)
--- SELECT * FROM (SELECT 'Alex', 'Rover') AS tmp
--- WHERE NOT EXISTS (
---         SELECT name FROM users WHERE name = 'Alex' AND surname = 'Rover'
---     ) LIMIT 1;
---
--- INSERT INTO users (name, surname)
--- SELECT * FROM (SELECT 'Kate', 'Yandson') AS tmp
--- WHERE NOT EXISTS (
---         SELECT name FROM users WHERE name = 'Kate' AND surname = 'Yandson'
---     ) LIMIT 1;
---
--- INSERT INTO users (name, surname)
--- SELECT * FROM (SELECT 'Lilo', 'Black') AS tmp
--- WHERE NOT EXISTS (
---         SELECT name FROM users WHERE name = 'Lilo' AND surname = 'Black'
---     ) LIMIT 1;
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Дрель', 'Ручной, пневматический или электрический инструмент, предназначенный для придачи вращательного движения сверлу или другому режущему инструменту для сверления отверстий в различных материалах при проведении строительных, отделочных, столярных, слесарных и других работ.', 5600) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Дрель'
+    ) LIMIT 1;
+
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Краска', 'Краска для стен', 500) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Краска'
+    ) LIMIT 1;
+
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Шпатель', 'Шпатель для штукатурки', 100) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Шпатель'
+    ) LIMIT 1;
+
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Шуруповерт', 'Шуруповерт для болтов', 3000) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Шуруповерт'
+    ) LIMIT 1;
+
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Шпатлевка', 'Шпатлевка для стен', 200) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Шпатлевка'
+    ) LIMIT 1;
+
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Шуруп', 'Шуруп для болтов', 10) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Шуруп'
+    ) LIMIT 1;
+
+INSERT INTO catalog (`product_name`, `product_desc`, `product_price`)
+SELECT * FROM (SELECT 'Болт', 'Болт для шуруповерта', 20) AS tmp
+WHERE NOT EXISTS (
+        SELECT product_name FROM catalog WHERE product_name = 'Болт'
+    ) LIMIT 1;
