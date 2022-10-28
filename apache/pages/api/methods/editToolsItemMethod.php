@@ -1,7 +1,7 @@
 <?php
 
 
-function editCatalogItemMethod()
+function editToolsItemMethod()
 {
     $id = $_GET["id"];
     $name = $_GET["name"];
@@ -10,5 +10,5 @@ function editCatalogItemMethod()
 
 
     header('Content-Type: application/json');
-    print_r(json_encode(updateItemInCatalog($id, $name, $price, $description), JSON_UNESCAPED_UNICODE));
+    print_r(json_encode(updateToolsInCatalog($id, $name, $price, $description), JSON_UNESCAPED_UNICODE));
 }

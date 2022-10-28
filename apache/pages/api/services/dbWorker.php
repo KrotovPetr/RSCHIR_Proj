@@ -6,10 +6,10 @@ function getDbObject()
     return $mysqli;
 }
 
-function getCatalog($offset, $limit)
+function getTools($offset, $limit)
 {
     $mysqli = getDbObject();
-    $result = $mysqli->query("SELECT * FROM catalog LIMIT $limit OFFSET $offset");
+    $result = $mysqli->query("SELECT * FROM tools LIMIT $limit OFFSET $offset");
     while ($row = mysqli_fetch_assoc($result)) {
         $products[] = $row;
     }
@@ -28,10 +28,10 @@ function getUsers($offset, $limit)
     return $users;
 }
 
-function addItemToCatalog($name, $price, $description)
+function addItemToTools($name, $price, $description)
 {
     $mysqli = getDbObject();
-    $result = $mysqli->query("INSERT INTO catalog (product_name, product_price, product_desc) VALUES ('$name', '$price', '$description')");
+    $result = $mysqli->query("INSERT INTO tools (product_name, product_price, product_desc) VALUES ('$name', '$price', '$description')");
     $mysqli->close();
     return $result;
 }
@@ -44,18 +44,18 @@ function addUser($name, $password)
     return $result;
 }
 
-function updateItemInCatalog($id, $name, $price, $description)
+function updateToolsInCatalog($id, $name, $price, $description)
 {
     $mysqli = getDbObject();
-    $result = $mysqli->query("UPDATE catalog SET product_name = '$name', product_price = '$price', product_desc = '$description' WHERE id = '$id'");
+    $result = $mysqli->query("UPDATE tools SET product_name = '$name', product_price = '$price', product_desc = '$description' WHERE id = '$id'");
     $mysqli->close();
     return $result;
 }
 
-function deleteCatalogItem($id)
+function deleteToolsItem($id)
 {
     $mysqli = getDbObject();
-    $result = $mysqli->query("DELETE FROM catalog WHERE id = '$id'");
+    $result = $mysqli->query("DELETE FROM tools WHERE id = '$id'");
     $mysqli->close();
     return $result;
 }
