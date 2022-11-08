@@ -14,9 +14,16 @@ services:
     container_name: apache
     build: ./apache
     restart: always
+    command: "/bin/sh -c 'apt-get update && 
+      pecl uninstall redis &&
+      pecl install -f redis &&
+      docker-php-ext-enable redis &&
+      docker-php-ext-install mysqli && 
+      exec apache2-foreground'"
     volumes:
       - ./apache/pages:/var/www/html/
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./apache/pages/static/uploads:/var/www/uploads/
     ports:
       - "8081:80"
     links:
@@ -31,3 +38,5 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "8080:80"
+  redis:
+    image: "redis:alpine"
