@@ -1,21 +1,20 @@
 <?php
-
-
-class LANGUAGE {
+class LANGUAGE
+{
     public static $RU = "ru";
     public static $EN = "en";
 }
 
-class THEME {
+class THEME
+{
     public static $LIGHT = "light";
     public static $DARK = "dark";
 }
 
-abstract class ABS_DICTIONARY {
+abstract class ABS_DICTIONARY
+{
     public $ADMIN_PANEL;
-
     public $HI;
-
     public $SETTING;
     public $THEME;
     public $LIGHT;
@@ -43,11 +42,10 @@ abstract class ABS_DICTIONARY {
     public $UPLOADING_FILES;
 }
 
-class RUS_DICTIONARY extends ABS_DICTIONARY {
+class RUS_DICTIONARY extends ABS_DICTIONARY
+{
     public $ADMIN_PANEL = "Административная панель";
-
     public $HI = "Привет";
-
     public $SETTING = "Настройки";
     public $THEME = "Тема";
     public $LIGHT = "Светлая";
@@ -75,7 +73,8 @@ class RUS_DICTIONARY extends ABS_DICTIONARY {
     public $UPLOADING_FILES = "Загруженные файлы";
 }
 
-class ENG_DICTIONARY extends ABS_DICTIONARY {
+class ENG_DICTIONARY extends ABS_DICTIONARY
+{
     public $ADMIN_PANEL = "ADMIN PANEL";
 
     public $HI = "Hi";
@@ -113,5 +112,3 @@ $DICTIONARY = [
 
 
 $uploaddir = '/var/www/uploads/';
-$uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
-?>

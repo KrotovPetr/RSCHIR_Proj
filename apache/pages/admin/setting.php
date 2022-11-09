@@ -13,5 +13,5 @@
     $_SESSION['theme'] = $_POST['theme'];
     $_SESSION['name'] = $_POST['name'];
 
-    header('Location: /admin/admin.php');
+    header('Location: ./admin.php');
 ?>

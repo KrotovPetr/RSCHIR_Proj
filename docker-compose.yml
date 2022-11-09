@@ -29,6 +29,7 @@ services:
     links:
       - db
       - nginx
+      - redis
   nginx:
     container_name: nginx
     image: "nginx:latest"
