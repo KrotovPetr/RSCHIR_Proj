@@ -1,6 +1,6 @@
 <?php
 include './login.php';
-include './constants.php';
+include './Constants/constants.php';
 
 $dictionary = $DICTIONARY[$_SESSION['language']];
 ?>
@@ -11,20 +11,16 @@ $dictionary = $DICTIONARY[$_SESSION['language']];
 
 <head>
     <meta charset="UTF-8">
-    <title>
-        <?php echo $dictionary->ADMIN_PANEL ?>
-    </title>
     <style>
         span {
             margin: 10px;
         }
-
         <?php
         if ($_SESSION['theme'] == THEME::$DARK) {
             echo '* {
-    color: rgb(233, 233, 233);
-    background-color: rgb(47, 45, 45);
-}';
+                color: rgb(233, 233, 233);
+                background-color: rgb(47, 45, 45);
+            }';
         }
         ?>
     </style>
@@ -33,18 +29,20 @@ $dictionary = $DICTIONARY[$_SESSION['language']];
 </head>
 
 <body>
+<div style="display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; border: 2px solid black">
+<h1 style="display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;">
+    <?php echo $dictionary->ADMIN_PANEL?>
+</h1>
 
-<h1><?php echo $dictionary->ADMIN_PANEL ?></h1>
-
-<div>
+<p style="font-size: 18px; font-weight: bold;">
     <?php
-    echo $dictionary->HI . " " . ($_SESSION['name'] ?: $dictionary->NAMELESS);
+    echo $dictionary->HI . " " . ($_SESSION['name'] ?: $dictionary->NAMELESS) .", ". $dictionary->DESCR;
     ?>
-</div>
+</p>
 
 <h2><?php echo $dictionary->SETTING ?></h2>
 
-<form action="./setting.php" method="post">
+<form action="./setting.php" method="post"  style=" display: flex; flex-flow: column nowrap; justify-content: center;">
     <div>
         <?php echo $dictionary->THEME ?>: <br>
         <label>
@@ -142,6 +140,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 </div>
 <?php $mysqli->close(); ?>
+</div>
 </body>
 
 </html>
