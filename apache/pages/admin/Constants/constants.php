@@ -20,4 +20,4 @@ $DICTIONARY = [
 ];
 
 
-$uploaddir = '/var/www/uploads/';
+$uploaddir = './files/';

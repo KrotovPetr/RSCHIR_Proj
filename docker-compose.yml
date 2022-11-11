@@ -23,7 +23,7 @@ services:
     volumes:
       - ./apache/pages:/var/www/html/
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
-      - ./apache/pages/static/uploads:/var/www/uploads/
+      - ./apache/pages/static:/var/www/uploads/
     ports:
       - "8081:80"
     links:
