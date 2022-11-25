@@ -1,0 +1,8 @@
+Dump:
+    dump{0..59}:
+      squirrels: '<numberBetween(10, 25)>'
+      fats: '<numberBetween(10, 25)>'
+      carbohydrates: '<numberBetween(10, 25)>'
+
+
+      

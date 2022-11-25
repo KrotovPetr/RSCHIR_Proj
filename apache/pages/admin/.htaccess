@@ -1,4 +1,0 @@
-AuthName "login"
-AuthType Basic
-Require valid-user
-
