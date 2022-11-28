@@ -1,5 +1,5 @@
 <?php
-include '../../api/services/login.php';
+include '../login.php';
 include './getFixtures.php';
 
 require '../../../vendor/autoload.php';

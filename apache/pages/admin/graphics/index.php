@@ -16,7 +16,7 @@ include '../login.php';
     <h1>Графики</h1>
 
     <div>
-        <a href="../admin.php">административная панель</a>
+        <a href="../admin.php">Административная панель</a>
     </div>
 
     <div>

@@ -2,7 +2,7 @@
 function drawImage($image)
 {
     $filename1 = "example.createFunctionSerie.scatter.png";
-    $filename_whater_mark = "whater_mark.png";
+    $filename_whater_mark = "water_mark.png";
 
     $image->render($filename1);
 

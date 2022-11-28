@@ -1,6 +1,6 @@
 <?php
 include '../login.php';
-require '../../../vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 // c-pchart
 use CpChart\Data;
