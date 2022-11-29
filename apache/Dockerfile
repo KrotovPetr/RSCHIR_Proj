@@ -1,27 +1,18 @@
-FROM php:7.4-apache
-
-#Composer
-RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin/ --filename=composer
-RUN alias composer='php /usr/local/bin/composer'
-
-#Предудщие
-RUN apt-get update && \
-    pecl uninstall redis && \
-    pecl install -f redis && \
-    docker-php-ext-enable redis && \
-    docker-php-ext-install mysqli
-
-#Фикстуры
-RUN apt-get install -y zip
-
-RUN composer require --prefer-dist nelmio/alice && \
-    composer update
-
-#Ватермарка
-RUN apt-get update && \
-    apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev && \
-    docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
+FROM composer:latest AS composer
+FROM php:8.0-apache
+WORKDIR /var/www/html
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN docker-php-ext-install mysqli
+RUN pecl install redis
+RUN docker-php-ext-enable redis
+COPY ports.conf /etc/apache2/ports.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+RUN chmod 777 /var/www/html
+RUN a2enmod authn_dbd && apt-get update && apt-get install -y apache2-utils libaprutil1-dbd-mysql &&\
+    apt-get install -y git && \
+    apt-get install -y libpng-dev && \
+    apt-get install -y zip unzip && \
     docker-php-ext-install gd
-
-#Графики
-RUN composer require szymach/c-pchart
+COPY pages/composer.json ./
+RUN composer update && \
+    composer install
