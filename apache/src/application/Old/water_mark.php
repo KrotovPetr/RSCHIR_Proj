@@ -10,7 +10,7 @@ function create_water_mark($imageEx)
         $image2 = imagecreatefromstring(file_get_contents($image2));
         imagealphablending($image2, false);
         imagesavealpha($image2, true);
-        $alpha = round(127/255*127); // convert to [0-127]
+        $alpha = round(127/255*127); 
 
         for ($x = 0; $x < $width; $x++) {
             for ($y = 0; $y < $height; $y++) {
@@ -28,14 +28,6 @@ function create_water_mark($imageEx)
                 imagesetpixel($image2, $x, $y, $col);
             }
         }
-
-        # Не работает полупрозрачность
-//    imagecolorallocate($image1, 255, 255, 255);
-//    imagesavealpha($image1, true);
-//    $color = imagecolorallocatealpha($image2, 255, 255, 255, 127);
-//    imagecolorset($image2, )
-//    imagesavealpha($image2, true);
-
         imagecopy($image1, $image2, 50, 50, 0, 0, $width, $height);
         imagepng($image1, $imageEx);
 

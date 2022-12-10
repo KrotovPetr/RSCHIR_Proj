@@ -16,6 +16,6 @@
 </ol>
 <a href="index.html">На главную</a>
 <br>
-<a href="admin/admin.php">Страница администратора</a>
+<a href="../admin/admin.php">Страница администратора</a>
 </body>
 </html>

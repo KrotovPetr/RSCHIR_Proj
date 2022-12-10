@@ -9,9 +9,6 @@ function draw_plot_scatter()
 {
     // Some data
     $ydata = get_only_data(get_raw_data(),"number");
-    //print_r ($ydata);
-
-    // Create the graph. These two calls are always required
     $__width = 1400;
     $__height = 300;
     $graph = new Graph\Graph($__width, $__height, 'auto');
