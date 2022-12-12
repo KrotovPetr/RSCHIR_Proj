@@ -1,0 +1,39 @@
+<?php
+$themeStyleSheet = 'http://localhost:8006/main.css';
+if (!empty($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') {
+    $themeStyleSheet = 'http://localhost:8006/dark.css';
+}
+$favicon = "http://localhost:8006/img/hp.png";
+if (!empty($_COOKIE['fav']) && $_COOKIE['fav'] == 'witcher') {
+    $favicon = "http://localhost:8006/img/witch.png";
+}
+?>
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>About Сoffee house</title>
+    <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" id="fav-link">
+    <link rel="stylesheet"
+          href="<?php echo $themeStyleSheet; ?>"
+          id="theme-link"
+          />
+</head>
+<body>
+<div>
+    <a href="../index.html">Click to return</a>
+    <h1>This is a small description about us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac augue et orci gravida rhoncus. Proin justo libero, porta eget cursus vel, sodales ac magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi. Quisque mattis erat sit amet tellus imperdiet imperdiet. Aenean sed fringilla velit, vitae sollicitudin purus. Mauris felis nulla, commodo non rutrum at, porta id massa. Proin fermentum, libero eu lacinia feugiat, diam ex tincidunt mi, ac ultricies tellus mi in orci. Quisque pellentesque eleifend nibh id porta. Sed bibendum sit amet ex quis ultrices. In est risus, euismod et mattis sed, hendrerit et purus. Mauris sodales sollicitudin sem et sagittis. Nam euismod eleifend laoreet. Nullam id erat ut felis luctus aliquam. Nunc suscipit ipsum pellentesque auctor pulvinar. Aliquam at est id libero auctor cursus.
+
+        Duis pellentesque imperdiet gravida. Morbi ornare, sem a hendrerit imperdiet, justo turpis iaculis felis, scelerisque pulvinar erat leo sit amet ipsum. Integer egestas sed nunc sit amet tempor. Fusce convallis massa ex, finibus ultrices nisi suscipit imperdiet. Nam eros libero, vehicula ac metus eget, ultricies porta diam. Nulla consectetur erat vitae lectus sodales, sed hendrerit metus aliquam. Sed ex ipsum, cursus ac ultrices sit amet, dignissim nec turpis. Pellentesque pulvinar lobortis nulla non luctus. Aenean tempor purus nec lobortis feugiat. Fusce vel mattis arcu. Nulla maximus euismod pharetra. Etiam a orci blandit felis euismod tincidunt eget at dolor. Donec nec auctor erat. Fusce turpis neque, tempus sit amet commodo ac, pharetra ac purus.
+
+        Nunc bibendum tempus augue, non accumsan lacus scelerisque nec. In scelerisque feugiat diam, et convallis nulla pellentesque non. Vestibulum mattis lacinia efficitur. Phasellus consequat nunc metus, in tempus odio tincidunt quis. Nunc eu tellus ut ipsum dapibus aliquet sit amet quis tortor. Maecenas id tortor in ante lobortis tincidunt. Curabitur fringilla dui vitae vestibulum laoreet. Etiam lectus purus, rhoncus in convallis sit amet, scelerisque gravida lectus. Nunc et est vitae purus tristique hendrerit et ac arcu. Nullam fermentum lacinia ex. Nulla luctus, arcu ut placerat consequat, nunc lorem pharetra diam, ut feugiat elit erat sit amet nibh. Integer sit amet nunc vel ante semper sodales lobortis a leo. Suspendisse non magna sit amet risus porttitor aliquam sed sit amet magna.
+
+        Praesent varius accumsan erat sit amet porttitor. Nunc in iaculis ligula, eget ornare tellus. Duis vel sagittis lectus. Proin efficitur massa at ligula malesuada porttitor. Nunc malesuada molestie tristique. Maecenas varius tellus at sem feugiat, nec blandit nisi facilisis. Aliquam eu massa vitae ex malesuada egestas. Aliquam iaculis feugiat nunc sed ultrices. Sed a magna et nibh tempor aliquam fringilla a augue.
+
+        Suspendisse potenti. Mauris a arcu a urna cursus fringilla. Vestibulum eleifend tortor non velit aliquet vestibulum. Vestibulum molestie accumsan ipsum, sed semper ligula euismod ut. Quisque ultrices lacus ipsum, eu aliquam elit tempor vitae. Integer porta tellus in justo consectetur iaculis. Morbi vestibulum purus in nisi dignissim sodales. Sed suscipit volutpat faucibus. Nunc tincidunt mattis pulvinar. In sed luctus ante. Maecenas ac mattis ante. Donec eu ante at metus convallis mattis. Sed non purus sem. Donec eu purus et ex rutrum sodales vitae mollis lacus. Nullam quis neque sollicitudin, tristique turpis eget, elementum nisl. Quisque at elementum risus.</p>
+</div>
+
+</body>
+<script src="http://localhost:8006/cookies.js"></script>
+</html>

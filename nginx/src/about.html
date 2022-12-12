@@ -1,0 +1,36 @@
+<?php
+$themeStyleSheet = 'http://localhost:8006/main.css';
+if (!empty($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') {
+    $themeStyleSheet = 'http://localhost:8006/dark.css';
+}
+$favicon = "http://localhost:8006/img/hp.png";
+if (!empty($_COOKIE['fav']) && $_COOKIE['fav'] == 'witcher') {
+    $favicon = "http://localhost:8006/img/witch.png";
+}
+?>
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>About Сoffee house</title>
+    <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" id="fav-link">
+    <link rel="stylesheet"
+          href="<?php echo $themeStyleSheet; ?>"
+          id="theme-link"
+          />
+</head>
+<body>
+<div>
+    <a href="./index.html">Нажмите, чтобы вернуться</a>
+    <h1>Немного информации о нас</h1>
+    <p>Строительный магазин: «В ближайшее время мы будем работать в штатном режиме»
+        На рынке строительных материалов в последние годы наблюдается тенденция роста продажи.
+        И это понятно, ведь сегодня строительный рынок предлагает огромный выбор современных и качественных материалов.
+        Но к сожалению, не все они соответствуют требованиям безопасности, что порой становится причиной возникновения пожаров.
+        В связи с этим все чаще работники МЧС ведут разъяснительную работу среди населения по правилам пожарной безопасности в быту.
+    </p>
+</div>
+<script src="./cookies.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<?php
+$themeStyleSheet = 'http://localhost:8006/main.css';
+if (!empty($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') {
+    $themeStyleSheet = 'http://localhost:8006/dark.css';
+}
+
+$lang = "ru";
+if (!empty($_COOKIE['lang']) && $_COOKIE['lang'] == 'en') {
+    $lang = "en";
+}
+
+$favicon = "http://localhost:8006/img/hp.png";
+if (!empty($_COOKIE['fav']) && $_COOKIE['fav'] == 'witcher') {
+    $favicon = "http://localhost:8006/img/witch.png";
+}
+?>
+
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Tools shop</title>
+    <link rel="stylesheet"
+          href="<?php echo $themeStyleSheet; ?>"
+          id="theme-link"
+    />
+
+</head>
+<body>
+<div class="wrapper">
+    <h1>Строительный магазин</h1>
+    <p>Изменить состояние</p>
+    <p>Здесь можно поменять фон и языковую раскладку</p>
+    <button  id="theme-button">Сменить оформление</button>
+    <button  id="lang-button">Сменить язык</button>
+
+</div>
+<div>
+    <ul>
+        <p id="first">Нажмите на ссылку</p>
+        <script>
+            node = document.getElementById('first');
+            var results = document.cookie.match(/lang=(.+?)(;|$)/);
+            if (results[1] === 'en'){
+                node.insertAdjacentHTML('afterend', '<br><li><a href="en/about.html">Learn about us</a></li>');
+                node.insertAdjacentHTML('afterend', '<br><li><a href="admin">Sign in</a></li>');
+                node.insertAdjacentHTML('afterend', '<br><li><a href="product">List of tools</a></li>');
+            }
+            else{
+                node.insertAdjacentHTML('afterend', '<br><li><a href="about.html">О нас</a></li>');
+                node.insertAdjacentHTML('afterend', '<br><li><a href="admin">Войти</a></li>');
+                node.insertAdjacentHTML('afterend', '<br><li><a href="product">Список товаров</a></li>');
+            }
+        </script>
+    </ul>
+</div>
+<script src="cookies.js"></script>
+</body>
+</html>
