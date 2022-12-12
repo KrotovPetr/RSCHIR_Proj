@@ -28,7 +28,7 @@ services:
     image: "nginx:latest"
     restart: always
     volumes:
-      - ./nginx/src:/etc/nginx/html/
+      - ./nginx/pages:/etc/nginx/html/
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "8080:80"

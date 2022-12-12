@@ -49,7 +49,7 @@ class Router {
         #debug("start");
         if ($this->match()) {
             #echo "21";
-            $path = 'application\controllers\\' .ucfirst($this->params['controller']).'Controller';
+            $path = 'mvc_app\controllers\\' .ucfirst($this->params['controller']).'Controller';
             #debug( $path);
             #debug(class_exists($path));
             #echo "2";

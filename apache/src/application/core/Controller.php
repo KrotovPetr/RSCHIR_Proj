@@ -1,6 +1,6 @@
 <?php
 
-namespace mvc_app\core;
+namespace application\core;
 
 use application\core\View;
 
@@ -17,7 +17,7 @@ abstract class Controller {
     }
 
     public function loadModel($name) {
-        $path = 'mvc_app\models\\'.ucfirst($name);
+        $path = 'application\models\\'.ucfirst($name);
         if (class_exists($path)) {
             return new $path;
         }
