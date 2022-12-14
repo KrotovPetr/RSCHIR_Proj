@@ -8,7 +8,7 @@ class Router {
     protected $params = [];
 
     public function __construct() {
-        $arr = require 'mvc_app/config/routers.php';
+        $arr = require 'mvc_app/config/routes.php';
         foreach ($arr as $key => $val){
             #echo ($key);
             $this->add($key, $val);

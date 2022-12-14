@@ -35,10 +35,6 @@ class AdminController extends Controller
                 $this->view->json($vars['result'], $vars['code']);
                 break;
             case 'DELETE':
-//                $mas = (parse_url($url, PHP_URL_PATH));
-//                $item = explode('/', $mas);
-//                $id = array_pop($item);
-//                echo $id;
                 $data = json_decode(file_get_contents("php://input"));
                 $vars = $this->model->delete($data);
                 $this->view->json($vars['result'], $vars['code']);

@@ -8,11 +8,6 @@ $lang = "ru";
 if (!empty($_COOKIE['lang']) && $_COOKIE['lang'] == 'en') {
     $lang = "en";
 }
-
-$favicon = "http://localhost:8006/img/hp.png";
-if (!empty($_COOKIE['fav']) && $_COOKIE['fav'] == 'witcher') {
-    $favicon = "http://localhost:8006/img/witch.png";
-}
 ?>
 
 
@@ -46,11 +41,15 @@ if (!empty($_COOKIE['fav']) && $_COOKIE['fav'] == 'witcher') {
                 node.insertAdjacentHTML('afterend', '<br><li><a href="en/about.html">Learn about us</a></li>');
                 node.insertAdjacentHTML('afterend', '<br><li><a href="admin">Sign in</a></li>');
                 node.insertAdjacentHTML('afterend', '<br><li><a href="product">List of tools</a></li>');
+                node.insertAdjacentHTML('afterend', '<br><li><a href="statistics">List of graphics</a></li>'
+                );
             }
             else{
                 node.insertAdjacentHTML('afterend', '<br><li><a href="about.html">О нас</a></li>');
                 node.insertAdjacentHTML('afterend', '<br><li><a href="admin">Войти</a></li>');
                 node.insertAdjacentHTML('afterend', '<br><li><a href="product">Список товаров</a></li>');
+                node.insertAdjacentHTML('afterend', '<br><li><a href="statistics">Страница графиков</a></li>'
+                );
             }
         </script>
     </ul>

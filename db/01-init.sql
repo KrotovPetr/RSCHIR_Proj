@@ -21,25 +21,26 @@ CREATE TABLE IF NOT EXISTS products (
     );
 
 INSERT INTO users (name, surname, password)
-VALUES ('admin', 'adminovich','admin');
+VALUES ('admin', 'administratorov','{SHA}0DPiKuNIrrVmD8IUCuw1hQxNqZc=');
 
 INSERT INTO users (name, surname, password)
-VALUES ('admin2', 'adminovich','{SHA}d033e22ae348aeb5660fc2140aec35850c4da997');
+VALUES ('anotherAdmin', 'administratorov','{SHA}d033e22ae348aeb5660fc2140aec35850c4da997');
 
 INSERT INTO users (name, surname, password)
-VALUES ('admin3', 'adminovich','{SHA}QV77lL0gK8qvC/dLp1ugXj3pPeg=');
+VALUES ('admin3', 'adminov','{SHA}QV77lL0gK8qvC/dLp1ugXj3Peg=');
 
 INSERT INTO users (name, surname, password)
-VALUES ('neadmin', 'neadminovich','neadmin');
+VALUES ('kakoyto', 'samozvnec','neadminpassword');
 
-INSERT INTO users (name, surname, password)
-VALUES ('geralt', 'riviya','gwint');
 
 INSERT INTO products(description, price)
-VALUES ('Bread', 40);
+VALUES ('Hummer', 400);
 
 INSERT INTO products(description, price)
-VALUES ('Meat', 240);
+VALUES ('Axe', 720);
 
 INSERT INTO products(description, price)
-VALUES ('Cake', 300);
+VALUES ('Paint', 1000);
+
+INSERT INTO products(description, price)
+VALUES ('Nails', 30);

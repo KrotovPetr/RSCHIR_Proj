@@ -1,21 +1,21 @@
 <style>
-    /* внешние границы таблицы серого цвета толщиной 1px */
     table {
+        width:500px;
         border: 1px solid grey;
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* границы ячеек первого ряда таблицы */
     th {
+        height:30px;
         border: 1px solid grey;
-        font-size: 250%;
+        font-size: 18px;
     }
 
-    /* границы ячеек тела таблицы */
     td {
+        height: 30px;
         border: 1px solid grey;
-        font-size: 250%;
+        font-size: 18px;
     }
 
     h1 {
@@ -23,6 +23,8 @@
     }
 </style>
 <div style="display: flex;flex-direction: column;">
+    <a href="index.html">Назад</a>
+    <h1>Наш товар</h1>
     <table>
         <tr>
             <th>Desc</th>
@@ -30,7 +32,9 @@
         </tr>
     <?php
     $id = 'id';
+    $lang = '';
     if ($lang == 'en'){
+        $products = [];
         foreach ($products as $row){
             echo "
         <tr>

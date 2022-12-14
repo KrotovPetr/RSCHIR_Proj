@@ -29,6 +29,7 @@
     }
 </style>
 <div style="display: flex;flex-direction: column;">
+    <a href="index.html">Назад</a>
     <h1>Таблица пользователей</h1>
     <table>
         <tr>
